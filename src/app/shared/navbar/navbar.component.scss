@@ -1,0 +1,120 @@
+.navbar-light {
+  background-color: #038896 !important;
+  height: 70px;
+  .img-menu {
+    transform: rotate(254deg);
+  }
+  .toggle-icon{
+    font-size: 25px;
+    color: white;
+    margin: 8px 0;
+    cursor: pointer;
+  }
+  .nav-icon {
+    .icon-size {
+      height: 30px;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+    &:hover {
+      background-color: #8dc043;
+      border-radius: 5px;
+    }
+    i {
+      font-size: 31px;
+      color: white;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+  }
+  .expand-icon {
+    &.input-group {
+      margin-left: 0px !important;
+      .input-group-append {
+        margin-inline: 14px;
+        .icon-size {
+          height: 23px;
+          margin: 8px 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .nav-item {
+    padding-inline: 10px;
+  }
+  .input-group,
+  input {
+    background-color: #3b5053;
+    border: none;
+    border-radius: 5px;
+  }
+  .profile-section {
+    color: white;
+    font-size: 17px;
+    .profile-photo {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.side-menu{
+  height: 90vh;
+  width: 500px;
+  margin-top: 70px;
+  background-color: #038896;
+  color: white;
+  display: none;
+  position: fixed;
+  z-index: 99;
+  border-top: .5px solid rgb(126, 168, 179);
+  &.open-sideMenu{
+    display: flex;
+    flex-direction: row;
+  }
+  &.close-sideMenu{
+    display: none;
+  }
+  .side-icons{
+    width: 110px;
+    border-right: 1px solid rgb(126, 168, 179);
+    .side-icon{
+      margin: 15px 0;
+      cursor: pointer;
+      i{
+        font-size: 20px;
+      }
+    }
+  }
+  .side-links{
+    padding: 15px 50px;
+    ul{
+      list-style: none;
+      padding: 0;
+      .main-link{
+        font-size: 25px;
+        font-weight: 600;
+        a{
+          color: #EFEFEF;
+          text-decoration: none;
+        }
+      }
+      .links-group{
+        margin: 20px 0;
+        .sub-link{
+          margin: 5px 0;
+          a{
+            color: #EFEFEF;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .active{
+    color: #8DC043;
+  }
+}

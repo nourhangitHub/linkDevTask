@@ -1,0 +1,85 @@
+<div [ngClass]="setCSSClass()">
+    <div *ngIf="!isNewsListPage" class="d-flex flex-row justify-content-between">
+        <h1> Latest News </h1>
+        <div class="view-all">
+            <a routerLink="./News">
+                <span>View All</span>
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
+        </div>
+    </div>
+    <div class="news-list-header"  *ngIf="isNewsListPage">
+        <div class="current-routing">
+            <a class="prev" routerLink="../"> Home </a>
+            <a class="prev"> < </a>
+            <a class="active"> News </a>
+        </div>
+        <h2 class="pb-3"> News</h2>
+        <div class="filter-form row">
+            <div class="col-md-7">
+                <label class="form-label">Name</label>
+                <select [formControl]="category" class="form-select" aria-label="Default select example">
+                    <option value="" disabled selected hidden>Select ...</option>
+                    <option *ngFor="let category of newsCategory" [value]="category.id">{{category.name}}</option>
+                    <option value="all">All News</option>
+                </select>
+            </div>
+            <div class="search col-md-5">
+                <label class="form-label"> search service </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="search service" aria-label="search service"
+                        aria-describedby="button-addon2">
+                    <button class="btn btn-primary" type="button" id="button-addon2" (click)="search()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="news-container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let new of news | paginate: 
+            { id: 'news',
+             itemsPerPage:12,
+            currentPage: pageNumber,
+            totalItems: totalLength }">
+            <!-- (click)="navegate(new.id)" -->
+                <div class="card h-100" >
+                    <img class="card-img-top card-Img" src="{{new.urlToImage}}" alt="Card image cap" (click)="navegate(new.id)">
+                    <div class="card-body">
+                       <div class="social-icon">
+                        <i *ngIf="!new.likeNew" (click)="toggleLike(new)" class="far fa-heart"></i>
+                        <i *ngIf="new.likeNew" (click)="toggleLike(new)" class="fas fa-heart"></i>
+                        <i class="fas fa-share-alt" (click)="toggleShareBox(new)"></i>
+                       </div>
+                       <div *ngIf="new.displayShare" class="share-box rounded">
+                        <span class="email">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="twitter">
+                            <i class="fab fa-twitter"></i>
+                        </span>
+                        <span class="facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </span>
+                    </div>
+                       <h5 class="card-title">{{new.title | titlecase}}</h5>
+                    </div>
+                    <div class="card-body" (click)="navegate(new.id)">
+                        <div class="badge bg-secondary mb-2">{{new.sourceCategoryName}}</div>
+                        <p class="card-content">{{new.description}}</p>
+                    </div>
+                    <div class="card-footer" (click)="navegate(new.id)">
+                        <i class="far fa-calendar-alt"></i>
+                        <span class="date">{{new.publishedAt | date}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <pagination-controls *ngIf="isNewsListPage" class="col-md-12 text-center mb-3" id="news" (pageChange)="pageNumber = $event"
+            previousLabel="PREVIOUS"
+            nextLabel="NEXT">
+        </pagination-controls>
+    </div>
+</div>

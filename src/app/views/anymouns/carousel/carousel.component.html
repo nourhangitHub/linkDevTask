@@ -1,0 +1,14 @@
+<owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let slide of slidesStore">
+      <ng-template carouselSlide [id]="slide.id">
+        <img class="carousel-img" [src]="slide.src" [alt]="slide.alt">
+        <div class="carousel-cover text-center">
+            <div class="slider-content">
+                <h2 class="mb-2"> AI Foundation</h2>
+                <p class="slider-p">is focused on inspiring the next generation of kids healthcare professionals .</p>
+                <button class="btn btn-primary"> Donate Now</button>
+            </div>
+        </div>
+      </ng-template>
+    </ng-container>
+</owl-carousel-o>

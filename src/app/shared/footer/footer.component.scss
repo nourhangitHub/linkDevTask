@@ -1,0 +1,46 @@
+footer{
+    background-color: #AFAFAF;
+    padding: 1.5rem 0;
+    ul{
+        list-style: none;
+        width: 20%;
+        li{
+            margin: 3px 0;
+            a{
+                text-decoration: none;
+                color: #565960;
+            }
+        }
+    }
+    .form-footer{
+        width: 25%;
+        input{
+            border: none;
+        }
+        .btn-primary{
+            background-color: #8DC043 !important;
+            border: none;
+        }
+    }
+    .follow-us{
+        width: 25%;
+        .icon{
+            height: 28px;
+            width: 50px;
+            cursor: pointer;
+        }
+        i{
+            color: #565960;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    }
+   
+}
+.bootom-Footer{
+    background-color: #038896;
+    color: #fff;
+    height: 50px;
+    padding: 15px 0;
+    
+}

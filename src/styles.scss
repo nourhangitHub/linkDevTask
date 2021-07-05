@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+body{
+    overflow-x: hidden; 
+    background-color: #fff;
+}
+.owl-nav{
+    bottom: 250px;
+    bottom: 50% 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    padding-inline: 70px;
+    z-index: 10 !important;
+    .owl-prev,.owl-next{
+        background-color: whitesmoke !important;
+        padding-inline: 20px;
+        .carousel-icon{
+            color: #565960;
+        }
+    }
+}
+.owl-dots{
+    position: relative;
+    bottom: 95px;
+    z-index: 10 !important;
+    .owl-dot{
+        span{
+            background-color: rgba(107, 105, 105, 0.377) !important;
+        }
+        &.active{
+            zoom: 1.5 !important;
+            span{
+                background-color: #fff !important;
+            }
+           
+        }
+    }
+    
+}
+
+#news > pagination-template > ul > li.current{
+    background: #038896;
+  }

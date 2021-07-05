@@ -1,0 +1,29 @@
+.carousel-img {
+    height: 500px;
+    width: 99vw;
+  }
+  .carousel-cover {
+    height: 500px;
+    width: 99vw;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(107, 105, 105, 0.6);
+    .slider-content {
+      color: #fff;
+      position: relative;
+      top: 30%;
+      width: 35%;
+      left: 30%;
+      line-height: 2;
+      .slider-p{
+          font-size: 18px;
+      }
+      .btn-primary {
+        background-color: #8dc043;
+        border: none;
+        padding-inline: 20px;
+      }
+    }
+  }
+  

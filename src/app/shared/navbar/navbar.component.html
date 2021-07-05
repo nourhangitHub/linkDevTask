@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" (click)="toggleSideMenu()">
+        <img class="img-menu toggle-icon" src="../../../assets/Menu.png" alt="menu" *ngIf="!sideMenuIsOpen">
+      </li>
+      <li class="nav-item" (click)="toggleSideMenu()">
+        <i class="fas fa-times toggle-icon" *ngIf="sideMenuIsOpen"></i>
+      </li>
+      <li class="nav-item">
+        <img src="../../../assets/Link_logo_vertical_color_Light_RGB-3.png" alt="log">
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item nav-icon" (click)="handelSearchInput()" *ngIf="!shearchIconIsClicked">
+        <img class="icon-size" src="../../../assets/search-1.png" alt="search">
+      </li>
+      <div class="input-group expand-icon" (click)="handelSearchInput()" *ngIf="shearchIconIsClicked">
+        <input type="text" class="form-control" placeholder="Search this blog">
+        <div class="input-group-append">
+          <img class="icon-size" src="../../../assets/search-1.png" alt="search">
+        </div>
+      </div>
+      <li class="nav-item nav-icon">
+        <i class="far fa-bell"></i>
+      </li>
+      <li class="nav-item profile-section">
+        <img class="profile-photo" src="../../../assets/img-1.png" alt="user image">
+        <span> User Name </span>
+      </li>
+      <li ngbDropdown class="nav-item nav-icon" (click)="toggleDropdown()">
+        <i class="fas fa-cog" id="dropdownBasic1" ngbDropdownToggle></i>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownBasic1">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="side-menu" #sideMenu>
+  <div class="side-icons d-flex flex-column justify-content-end align-items-center">
+    <div class="side-icon">
+      <i class="fab fa-twitter"></i>
+    </div>
+    <div class="side-icon">
+      <i class="fab fa-facebook-f"></i>
+    </div>
+    <img class="side-icon" src="../../../assets/linkedin-1.png">
+    <img class="side-icon" src="../../../assets/surface-22.png">
+    <img class="side-icon" src="../../../assets/surface-27.png">
+  </div>
+  <div class="side-links d-flex flex-column justify-content-between">
+    <ul>
+      <li class="main-link">
+        <a [routerLink]="['Home']" routerLinkActive="active"> Home</a>
+      </li>
+      <div class="links-group">
+        <h4>About Us</h4>
+        <li class="sub-link">
+          <a [routerLink]="['/home']" routerLinkActive="active"> How Ara Us</a>
+        </li>
+        <li class="sub-link">
+          <a [routerLink]="['/home']" routerLinkActive="active"> Why Us</a>
+        </li>
+      </div>
+      <div class="links-group">
+        <h4>News</h4>
+        <li class="sub-link">
+          <a [routerLink]="['/home']" routerLinkActive="active"> News</a>
+        </li>
+        <li class="sub-link">
+          <a [routerLink]="['/home']" routerLinkActive="active"> Events</a>
+        </li>
+      </div>
+      <div class="links-group">
+        <h4>Careers</h4>
+        <li class="sub-link">
+          <a [routerLink]="['/home']" routerLinkActive="active"> Opportunities</a>
+        </li>
+      </div>
+    </ul>
+    <ul>
+      <li class="main-link">
+        <a [routerLink]="['/home']" routerLinkActive="active"> Contact Us</a>
+      </li>
+      <li class="main-link">
+        <a [routerLink]="['/home']" routerLinkActive="active"> Site Map</a>
+      </li>
+    </ul>
+  </div>
+</div>

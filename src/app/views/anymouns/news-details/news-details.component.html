@@ -1,0 +1,69 @@
+<div class="details-container">
+    <div class="news-details-header">
+        <div class="current-routing">
+            <a class="prev" routerLink="../../"> Home </a>
+            <a class="prev"> < </a>
+            <a class="prev" routerLink="../"> News </a>
+            <a class="prev"> < </a>
+            <a class="active"> News Details</a>
+        </div>
+        <h2> News Details</h2>
+    </div>
+    <br>
+    <div class="card" *ngIf="newDetails">
+        <img class="card-img-top" [src]="newDetails.urlToImage" alt="Card image cap">
+        <div class="card-body">
+            <div class="d-flex flex-row justify-content-between">
+                <div class="text-muted pt-3 pb-3">{{newDetails.sourceCategoryName}}</div>
+                <div class="social-icon">
+                    <i *ngIf="!likeNew" (click)="toggleLike()" class="far fa-heart"></i>
+                    <i *ngIf="likeNew" (click)="toggleLike()" class="fas fa-heart"></i>
+                    <i class="fas fa-share-alt" (click)="toggleShareBox()"></i>
+                </div>
+                <div *ngIf="displayShare" class="share-box rounded">
+                    <span class="email">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="twitter">
+                        <i class="fab fa-twitter"></i>
+                    </span>
+                    <span class="facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </span>
+                </div>
+            </div>
+            <h5 class="card-title">{{newDetails.title | titlecase}}</h5>
+            <p class="card-text">{{newDetails.content}}</p>
+        </div>
+    </div>
+    <br>
+    <div class="related-news" *ngIf="relatedNews">
+        <h2 class="pt-3 pb-3"> Related News</h2>
+        <div class="row">
+            <div class="col-md-4 col-12 pb-3" *ngFor="let new of relatedNews">
+                <div class="card bg-light text-black " >
+                    <img class="card-img-top" [src]="new.urlToImage" alt="Card image cap">
+                    <div class="card-img-overlay">
+                      <div class="text-muted pb-2">{{new.sourceCategoryName}}</div>
+                      <h5 class="card-title">{{new.title | titlecase}}</h5>
+                      <div class="view-all">
+                        <a (click)="showDetails(new.id)" class="">
+                            <span>View Details</span>
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-between">
+        <div></div>
+        <div class="view-all">
+            <a routerLink="../">
+                <span>View All</span>
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

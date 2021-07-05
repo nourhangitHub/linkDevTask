@@ -1,0 +1,124 @@
+.home-news{
+    padding-inline: 7%;
+    padding-bottom: 100px;
+    .view-all{
+        word-spacing: 3px;
+        margin: auto 0;
+        a{
+            text-decoration: none;
+            color: #8DC043;
+            font-size: 18px;
+            span{
+                padding-inline: 10px;
+            }
+        }
+       
+    }
+}
+
+.new-list-container{
+    padding-inline: 7%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #EFEFEF;
+    .news-list-header{
+        .current-routing{
+            color: #565960;
+            font-size: 14px;
+            margin-bottom: 1rem;
+            a{
+                color: #565960;
+                padding-right: 5px;
+                text-decoration: none;
+                cursor: pointer;
+                &.active{
+                    color:#038896;
+                }
+            }
+        }
+        .search{
+            .btn-primary{
+                background-color: #8DC043 !important;
+                border: none;
+            }
+        }
+    }
+}
+
+
+.news-container{
+    margin-top: 30px;
+    .card{
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        cursor: pointer;
+        &.col-md-3,&.col-12{
+            padding: 0;
+        }
+        .card-Img{
+            height: 210px;
+        }
+        .social-icon{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            color: #8DC043;
+            font-size: 18px;
+            i{
+                padding-inline: 5px;
+                cursor: pointer;
+            }
+        }
+        .share-box{
+            position: absolute;
+            right: 20px;
+            bottom: 260px;
+            display: flex;
+            flex-direction: row-reverse;
+            width: 120px;
+            color: #fff;
+            font-size: 20px;
+            padding: 2px;
+            span{
+              width: 40px;
+              cursor: pointer;
+              &.email{
+                background-color: red;
+              }
+              &.twitter{
+                background-color: #00B9FF;
+              }
+              &.facebook{
+                background-color: #045775;
+              }
+              i{
+                padding: 0 12px;
+              }
+            }
+          }
+        .bg-secondary{
+            color: #565960;
+            padding: 10px;
+            background-color: #EFEFEF !important;
+        }
+        .card-content{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .card-footer{
+            background-color: #fff;
+            border-top: none;
+            i{
+                color: #8DC043;
+                font-size: 18px;
+                padding-inline: 5px;
+            }
+            .date{
+                color: #565960;
+                font-weight: 600;
+            }
+            
+        }
+    }
+}
