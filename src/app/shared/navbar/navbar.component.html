@@ -1,43 +1,50 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
   <div class="container">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" (click)="toggleSideMenu()">
+    <div class="d-flex flex-row justify-content-around">
+      <span class="nav-item" (click)="toggleSideMenu()">
         <img class="img-menu toggle-icon" src="../../../assets/Menu.png" alt="menu" *ngIf="!sideMenuIsOpen">
-      </li>
-      <li class="nav-item" (click)="toggleSideMenu()">
+      </span>
+      <span class="nav-item" (click)="toggleSideMenu()">
         <i class="fas fa-times toggle-icon" *ngIf="sideMenuIsOpen"></i>
-      </li>
-      <li class="nav-item">
-        <img src="../../../assets/Link_logo_vertical_color_Light_RGB-3.png" alt="log">
-      </li>
-    </ul>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item nav-icon" (click)="handelSearchInput()" *ngIf="!shearchIconIsClicked">
-        <img class="icon-size" src="../../../assets/search-1.png" alt="search">
-      </li>
-      <div class="input-group expand-icon" (click)="handelSearchInput()" *ngIf="shearchIconIsClicked">
-        <input type="text" class="form-control" placeholder="Search this blog">
-        <div class="input-group-append">
+      </span>
+      <span class="nav-item">
+        <img class="navbar-brand" src="../../../assets/Link_logo_vertical_color_Light_RGB-3.png" alt="log">
+      </span>
+    </div>
+    <button (click)="toggle()" class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [class.show]="isOpen" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item nav-icon" (click)="handelSearchInput()" *ngIf="!shearchIconIsClicked">
           <img class="icon-size" src="../../../assets/search-1.png" alt="search">
+        </li>
+        <div class="input-group expand-icon" (click)="handelSearchInput()" *ngIf="shearchIconIsClicked">
+          <input type="text" class="form-control" placeholder="Search this blog">
+          <div class="input-group-append">
+            <img class="icon-size" src="../../../assets/search-1.png" alt="search">
+          </div>
         </div>
-      </div>
-      <li class="nav-item nav-icon">
-        <i class="far fa-bell"></i>
-      </li>
-      <li class="nav-item profile-section">
-        <img class="profile-photo" src="../../../assets/img-1.png" alt="user image">
-        <span> User Name </span>
-      </li>
-      <li ngbDropdown class="nav-item nav-icon" (click)="toggleDropdown()">
-        <i class="fas fa-cog" id="dropdownBasic1" ngbDropdownToggle></i>
-        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownBasic1">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-    </ul>
+        <li class="nav-item nav-icon">
+          <i class="far fa-bell"></i>
+        </li>
+        <li class="nav-item profile-section">
+          <img class="profile-photo" src="../../../assets/img-1.png" alt="user image">
+          <span> User Name </span>
+        </li>
+        <li ngbDropdown class="nav-item nav-icon" (click)="toggleDropdown()">
+          <i class="fas fa-cog" id="dropdownBasic1" ngbDropdownToggle></i>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownBasic1">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 <div class="side-menu" #sideMenu>

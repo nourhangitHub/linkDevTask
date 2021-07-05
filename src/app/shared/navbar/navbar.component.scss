@@ -1,6 +1,10 @@
-.navbar-light {
+.navbar {
   background-color: #038896 !important;
   height: 70px;
+  .collapse{
+    width: 100%;
+    justify-content: flex-end;
+  }
   .img-menu {
     transform: rotate(254deg);
   }
@@ -117,4 +121,20 @@
   .active{
     color: #8DC043;
   }
+  .collapse{
+    background-color: #038896 !important;
+  }
+}
+
+@media (max-width: 990px) {
+  .navbar-collapse
+    {
+        background-color:#038896;
+        margin-left: 55%;
+        padding: 10px 10px;
+        text-align: center;
+        ul li{
+          margin: 3px 0;
+        }
+    }
 }

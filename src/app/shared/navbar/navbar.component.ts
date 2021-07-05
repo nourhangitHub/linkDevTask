@@ -9,6 +9,7 @@ export class NavbarComponent implements OnInit {
   shearchIconIsClicked: boolean = false;
   dropdownIsopen : boolean = true;
   sideMenuIsOpen : boolean = false;
+  isOpen: boolean = false;
   @ViewChild('sideMenu',{static: false}) sideMenu!: ElementRef ;
   constructor() { }
 
@@ -16,6 +17,9 @@ export class NavbarComponent implements OnInit {
   }
   handelSearchInput(){
     this.shearchIconIsClicked = !this.shearchIconIsClicked;
+  }
+  toggle(){
+    this.isOpen = !this.isOpen;
   }
   toggleDropdown(){
     this.dropdownIsopen = !this.dropdownIsopen;
