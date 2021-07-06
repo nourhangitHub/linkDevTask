@@ -3,7 +3,7 @@ footer{
     padding: 1.5rem 0;
     ul{
         list-style: none;
-        width: 20%;
+        //width: 20%;
         li{
             margin: 3px 0;
             a{
@@ -13,7 +13,7 @@ footer{
         }
     }
     .form-footer{
-        width: 25%;
+        //width: 25%;
         input{
             border: none;
         }
@@ -23,7 +23,7 @@ footer{
         }
     }
     .follow-us{
-        width: 25%;
+        //width: 25%;
         .icon{
             height: 28px;
             width: 50px;
@@ -44,3 +44,18 @@ footer{
     padding: 15px 0;
     
 }
+
+// @media (min-width: 800px) {
+//     footer{
+//         ul{
+//             width: 50%;
+//         }
+//         .form-footer{
+//             width: 100%;
+//         }
+//         .follow-us{
+//             width: 100%;
+//         }
+       
+//     }
+//   }

@@ -4,6 +4,7 @@
     background-size: cover;
     height: 740px;
     color:#fff;
+    // overflow: auto;
     .content{
         background-color: rgba(0, 0, 0, 0.3);
         height: 100%;
@@ -24,11 +25,40 @@
             }
             .box-content{
                  transform: rotate(-45deg);
+                 img{
+                    height: 70px;
+                }
                  .fa-eye,.fa-user-circle,.fa-mobile-alt,.fa-info-circle{
-                    font-size: 67px;
+                    font-size: 70px;
                  }
             }
         }
     }
     
 }
+
+@media (max-width: 970px) {
+    .bg-img{
+        .wrapper{
+            .box{
+                width:100px;
+                height:100px;
+                &:hover{
+                    background-color: #8dc043;
+                    border: 2px solid #8dc043;
+                }
+                .box-content{
+                     transform: rotate(-45deg);
+                     img{
+                         height: 30px;
+                     }
+                     .fa-eye,.fa-user-circle,.fa-mobile-alt,.fa-info-circle{
+                        font-size: 30px;
+                     }
+                }
+            }
+        }
+        
+    }
+    
+  }

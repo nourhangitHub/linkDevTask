@@ -14,7 +14,7 @@
             <a class="prev"> < </a>
             <a class="active"> News </a>
         </div>
-        <h2 class="pb-3"> News</h2>
+        <h1 class="pb-3"> News</h1>
         <div class="filter-form row">
             <div class="col-md-7">
                 <label class="form-label">Name</label>
@@ -28,7 +28,7 @@
                 <label class="form-label"> search service </label>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="search service" aria-label="search service"
-                        aria-describedby="button-addon2">
+                        aria-describedby="button-addon2" (keypress)="enter($event)">
                     <button class="btn btn-primary" type="button" id="button-addon2" (click)="search()">
                         <i class="fas fa-search"></i>
                     </button>
@@ -83,3 +83,6 @@
         </pagination-controls>
     </div>
 </div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+</ngx-spinner>   
