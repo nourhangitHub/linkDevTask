@@ -1,43 +1,65 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
   <div class="container">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" (click)="toggleSideMenu()">
+    <div class="d-flex flex-row justify-content-around">
+      <span class="nav-item" (click)="toggleSideMenu()">
         <img class="img-menu toggle-icon" src="../../../assets/Menu.png" alt="menu" *ngIf="!sideMenuIsOpen">
-      </li>
-      <li class="nav-item" (click)="toggleSideMenu()">
+      </span>
+      <span class="nav-item" (click)="toggleSideMenu()">
         <i class="fas fa-times toggle-icon" *ngIf="sideMenuIsOpen"></i>
-      </li>
-      <li class="nav-item">
-        <img src="../../../assets/Link_logo_vertical_color_Light_RGB-3.png" alt="log">
-      </li>
-    </ul>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item nav-icon" (click)="handelSearchInput()" *ngIf="!shearchIconIsClicked">
-        <img class="icon-size" src="../../../assets/search-1.png" alt="search">
-      </li>
-      <div class="input-group expand-icon" (click)="handelSearchInput()" *ngIf="shearchIconIsClicked">
-        <input type="text" class="form-control" placeholder="Search this blog">
-        <div class="input-group-append">
+      </span>
+      <span class="nav-item">
+        <img class="navbar-brand" src="../../../assets/Link_logo_vertical_color_Light_RGB-3.png" alt="log">
+      </span>
+    </div>
+    <button (click)="toggle()" class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [class.show]="isOpen" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto d-flex align-items-center">
+        <li matTooltip="Search" class="nav-item nav-icon mx-1" (click)="handelSearchInput()" *ngIf="!shearchIconIsClicked">
           <img class="icon-size" src="../../../assets/search-1.png" alt="search">
+        </li>
+        <div  class="input-group expand-icon mx-1" (click)="handelSearchInput()" *ngIf="shearchIconIsClicked">
+          <input type="text" class="form-control" placeholder="Search">
+          <div class="input-group-append">
+            <img class="icon-size" src="../../../assets/search-1.png" alt="search">
+          </div>
         </div>
-      </div>
-      <li class="nav-item nav-icon">
-        <i class="far fa-bell"></i>
-      </li>
-      <li class="nav-item profile-section">
-        <img class="profile-photo" src="../../../assets/img-1.png" alt="user image">
-        <span> User Name </span>
-      </li>
-      <li ngbDropdown class="nav-item nav-icon" (click)="toggleDropdown()">
-        <i class="fas fa-cog" id="dropdownBasic1" ngbDropdownToggle></i>
-        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownBasic1">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-    </ul>
+        <li matTooltip="Notification" class="nav-item nav-icon mx-1">
+          <i class="far fa-bell"></i>
+        </li>
+        <li  class="d-flex profile-section mx-1">
+          <img class="profile-photo mx-1" src="../../../assets/img-1.png" alt="user image">
+          <span class="user-name mx-1"> User Name </span>
+        </li>
+          <i matTooltip="Setting" class="fas fa-cog mx-1" id="dropdownBasic1" [matMenuTriggerFor]="beforeMenu"></i>
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item disabled>
+              <small class="text-muted"> Language</small>
+            </button>
+            <button mat-menu-item>English <i class="fas fa-check"></i></button>
+            <button mat-menu-item>اللغة العربية</button>
+            <hr>
+            <button mat-menu-item disabled>
+              <small class="text-muted"> Font Size</small>
+            </button>
+            <button mat-menu-item>
+              <span><i class="fas fa-font" style=" color: #8dc043;"></i></span>
+              <span><i class="fas fa-font"></i></span>
+              <span><i class="fas fa-font"></i></span>
+            </button>
+            <hr>
+            <button mat-menu-item disabled>
+              <small class="text-muted"> Account </small>
+            </button>
+            <button mat-menu-item>
+              Sign In
+            </button>
+          </mat-menu>
+      </ul>
+    </div>
   </div>
 </nav>
 <div class="side-menu" #sideMenu>
@@ -55,19 +77,19 @@
   <div class="side-links d-flex flex-column justify-content-between">
     <ul>
       <li class="main-link">
-        <a [routerLink]="['Home']" routerLinkActive="active"> Home</a>
+        <a [routerLink]="['/Home']" routerLinkActive="active"> Home</a>
       </li>
       <div class="links-group">
-        <h4>About Us</h4>
+        <div class="main-link">About Us</div>
         <li class="sub-link">
-          <a [routerLink]="['/home']" routerLinkActive="active"> How Ara Us</a>
+          <a [routerLink]="['']" > How Ara Us</a>
         </li>
         <li class="sub-link">
-          <a [routerLink]="['/home']" routerLinkActive="active"> Why Us</a>
+          <a [routerLink]="['']" > Why Us</a>
         </li>
       </div>
       <div class="links-group">
-        <h4>News</h4>
+        <div class="main-link">News</div>
         <li class="sub-link">
           <a [routerLink]="['/home']" routerLinkActive="active"> News</a>
         </li>
@@ -76,7 +98,7 @@
         </li>
       </div>
       <div class="links-group">
-        <h4>Careers</h4>
+        <div class="main-link">Careers</div>
         <li class="sub-link">
           <a [routerLink]="['/home']" routerLinkActive="active"> Opportunities</a>
         </li>

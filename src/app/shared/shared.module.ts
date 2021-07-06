@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '../core/customPipe/date.pipe';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { NgxSpinnerModule } from "ngx-spinner";  
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -24,7 +27,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
     HttpClientModule,
     FormsModule, 
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatMenuModule,
+    NgxSpinnerModule,
+    MatTooltipModule
   ],
   exports: [
     NavbarComponent,
@@ -35,7 +41,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
     CarouselModule,
     FormsModule, 
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatMenuModule,
+    NgxSpinnerModule,
+    MatTooltipModule
   ],
   
 })

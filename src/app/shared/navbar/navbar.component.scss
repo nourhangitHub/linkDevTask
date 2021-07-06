@@ -1,6 +1,13 @@
-.navbar-light {
-  background-color: #038896 !important;
+
+@import '../../../assets/colors.scss';
+
+.navbar {
+  background-color: $main-mode !important;
   height: 70px;
+  .collapse{
+    width: 100%;
+    justify-content: flex-end;
+  }
   .img-menu {
     transform: rotate(254deg);
   }
@@ -10,6 +17,11 @@
     margin: 8px 0;
     cursor: pointer;
   }
+  .fa-cog{
+    color: white;
+    font-size: 25px;
+    margin: auto 0;
+  }
   .nav-icon {
     .icon-size {
       height: 30px;
@@ -17,7 +29,7 @@
       cursor: pointer;
     }
     &:hover {
-      background-color: #8dc043;
+      background-color: $sub-mode;
       border-radius: 5px;
     }
     i {
@@ -28,8 +40,15 @@
     }
   }
   .expand-icon {
-    &.input-group {
+    &.input-group{
       margin-left: 0px !important;
+      background-color: #3b5053;
+      border: none;
+      border-radius: 5px;
+      .form-control {
+        background-color: #3b5053;
+        border: none;
+      }
       .input-group-append {
         margin-inline: 14px;
         .icon-size {
@@ -44,12 +63,7 @@
   .nav-item {
     padding-inline: 10px;
   }
-  .input-group,
-  input {
-    background-color: #3b5053;
-    border: none;
-    border-radius: 5px;
-  }
+  
   .profile-section {
     color: white;
     font-size: 17px;
@@ -58,6 +72,10 @@
       width: 50px;
       border-radius: 50%;
     }
+    .user-name{
+      width: 107px;
+      align-self: center;
+    }
   }
 }
 
@@ -65,7 +83,7 @@
   height: 90vh;
   width: 500px;
   margin-top: 70px;
-  background-color: #038896;
+  background-color: $main-mode;
   color: white;
   display: none;
   position: fixed;
@@ -96,9 +114,10 @@
       padding: 0;
       .main-link{
         font-size: 25px;
-        font-weight: 600;
+        font-weight: 500;
+        margin: 10px 0;
         a{
-          color: #EFEFEF;
+          color: $gray-1;
           text-decoration: none;
         }
       }
@@ -107,7 +126,7 @@
         .sub-link{
           margin: 5px 0;
           a{
-            color: #EFEFEF;
+            color: $gray-1;
             text-decoration: none;
           }
         }
@@ -115,6 +134,30 @@
     }
   }
   .active{
-    color: #8DC043;
+    color: $sub-mode !important;
   }
+  .collapse{
+    background-color: $main-mode !important;
+  }
+}
+
+.fa-check{
+  color: $sub-mode;
+  padding-inline: 10px;
+}
+.fa-font{
+  padding-inline: 10px;
+}
+
+@media (max-width: 990px) {
+  .navbar-collapse
+    {
+        background-color: $main-mode;
+        margin-left: 55%;
+        padding: 15px ;
+        text-align: center;
+        ul li{
+          margin: 3px 0;
+        }
+    }
 }

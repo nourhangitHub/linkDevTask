@@ -1,9 +1,11 @@
+@import '../../../../assets/colors.scss';
 .bg-img{
     background-image: url(../../../../assets/help.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 740px;
     color:#fff;
+    // overflow: auto;
     .content{
         background-color: rgba(0, 0, 0, 0.3);
         height: 100%;
@@ -19,16 +21,84 @@
             height: 150px;
             transform: rotate(45deg);
             &:hover{
-                background-color: #8dc043;
-                border: 2px solid #8dc043;
+                background-color: $sub-mode;
+                border: 2px solid $sub-mode;
             }
             .box-content{
                  transform: rotate(-45deg);
+                 img{
+                    height: 70px;
+                }
                  .fa-eye,.fa-user-circle,.fa-mobile-alt,.fa-info-circle{
-                    font-size: 67px;
+                    font-size: 70px;
                  }
             }
         }
     }
     
 }
+
+@media (max-width: 970px) {
+    .bg-img{
+        .wrapper{
+            .box{
+                width:100px;
+                height:100px;
+                &:hover{
+                    background-color: $sub-mode;
+                    border: 2px solid $sub-mode;
+                }
+                .box-content{
+                     transform: rotate(-45deg);
+                     img{
+                         height: 30px;
+                     }
+                     .fa-eye,.fa-user-circle,.fa-mobile-alt,.fa-info-circle{
+                        font-size: 30px;
+                     }
+                }
+            }
+        }
+        
+    }
+    
+  }
+
+  @media (max-width: 762px) {
+    .bg-img{
+        .wrapper{
+            .box{
+                width:80px;
+                height:80px;
+                &:hover{
+                    background-color: $sub-mode;
+                    border: 2px solid $sub-mode;
+                }
+                .box-content{
+                     transform: rotate(-45deg);
+                     img{
+                         height: 15px;
+                     }
+                     h5{  
+                       font-size: 10px;
+                     }
+                     .fa-eye,.fa-user-circle,.fa-mobile-alt,.fa-info-circle ,.fa-plus{
+                        font-size: 15px;
+                     }
+                }
+            }
+        }
+        
+    }
+    
+  }
+
+  @media (max-width: 681px) {
+    .bg-img{
+        .wrapper{
+            display: none;
+        }
+        
+    }
+    
+  }

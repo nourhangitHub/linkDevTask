@@ -1,36 +1,34 @@
+@import '../../../assets/colors.scss';
 footer{
-    background-color: #AFAFAF;
+    background-color: $gray-2;
     padding: 1.5rem 0;
     ul{
         list-style: none;
-        width: 20%;
         li{
             margin: 3px 0;
             a{
                 text-decoration: none;
-                color: #565960;
+                color: $gray-3;
             }
         }
     }
     .form-footer{
-        width: 25%;
         input{
             border: none;
         }
         .btn-primary{
-            background-color: #8DC043 !important;
+            background-color: $sub-mode !important;
             border: none;
         }
     }
     .follow-us{
-        width: 25%;
         .icon{
             height: 28px;
             width: 50px;
             cursor: pointer;
         }
         i{
-            color: #565960;
+            color: $gray-3;
             font-size: 25px;
             cursor: pointer;
         }
@@ -38,7 +36,7 @@ footer{
    
 }
 .bootom-Footer{
-    background-color: #038896;
+    background-color: $main-mode;
     color: #fff;
     height: 50px;
     padding: 15px 0;

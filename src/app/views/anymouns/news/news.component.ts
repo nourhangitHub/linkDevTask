@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
 import { News, NewsCategory } from 'src/app/core/models/news.model';
 import { NewsService } from 'src/app/core/services/news.service';
@@ -21,13 +22,14 @@ export class NewsComponent implements OnInit, OnDestroy {
   pageNumber : number = 1;
   category = new FormControl('');
   displayShare: boolean = false;
-  constructor(private newsService: NewsService, private route : Router) { }
+  constructor(private newsService: NewsService, private route : Router,  private SpinnerService: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.getAllNews('');
   }
 
   getAllNews(filter: string): void{
+    this.SpinnerService.show();  
     this.subscription = this.newsService.getNews().subscribe(res => {
       if(res.status === 'ok'){
         this.newsCategory = res.sourceCategory;
@@ -48,6 +50,7 @@ export class NewsComponent implements OnInit, OnDestroy {
           this.filterByCategory(filter);
         }
         this.totalLength = this.news.length;
+        this.SpinnerService.hide();  
       }
     })
   }
@@ -71,8 +74,12 @@ export class NewsComponent implements OnInit, OnDestroy {
   navegate(newId : any){
     this.route.navigate(['../Home/News', newId])
   }
-
-  search(){
+  enter(event : any){
+    if(event.key == 'Enter'){
+     this.search();
+    }
+  }
+  search() : void{
     if(this.category.value == 'all'){
       this.getAllNews('');
     }else{

@@ -1,19 +1,20 @@
+@import '../../../../assets/colors.scss';
 .details-container {
   padding-top: 100px;
   padding-bottom: 70px;
   padding-inline: 7%;
-  background-color: #EFEFEF;
+  background-color: $gray-1;
   .news-details-header {
     .current-routing {
       font-size: 14px;
       margin-bottom: 1rem;
       a {
         text-decoration: none;
-        color: #565960;
+        color:$gray-3;
         padding-right: 5px;
         cursor: pointer;
         &.active {
-          color: #038896;
+          color: $main-mode;
         }
       }
     }
@@ -25,7 +26,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    color: #8DC043;
+    color: $sub-mode;
     font-size: 18px;
     margin: auto 0;
     i{
@@ -65,7 +66,7 @@
     margin: auto 0;
     a{
         text-decoration: none;
-        color: #8DC043;
+        color: $sub-mode;
         font-size: 18px;
         span{
             padding-inline: 10px;
@@ -89,8 +90,9 @@
         word-spacing: 3px;
         a{
             text-decoration: none;
-            color: #8DC043;
+            color: $sub-mode;
             font-size: 18px;
+            cursor: pointer;
             span{
                 padding-right: 10px;
             }
