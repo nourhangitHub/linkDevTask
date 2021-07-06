@@ -1,5 +1,8 @@
+
+@import '../../../assets/colors.scss';
+
 .navbar {
-  background-color: #038896 !important;
+  background-color: $main-mode !important;
   height: 70px;
   .collapse{
     width: 100%;
@@ -26,7 +29,7 @@
       cursor: pointer;
     }
     &:hover {
-      background-color: #8dc043;
+      background-color: $sub-mode;
       border-radius: 5px;
     }
     i {
@@ -80,7 +83,7 @@
   height: 90vh;
   width: 500px;
   margin-top: 70px;
-  background-color: #038896;
+  background-color: $main-mode;
   color: white;
   display: none;
   position: fixed;
@@ -114,7 +117,7 @@
         font-weight: 500;
         margin: 10px 0;
         a{
-          color: #EFEFEF;
+          color: $gray-1;
           text-decoration: none;
         }
       }
@@ -123,7 +126,7 @@
         .sub-link{
           margin: 5px 0;
           a{
-            color: #EFEFEF;
+            color: $gray-1;
             text-decoration: none;
           }
         }
@@ -131,15 +134,15 @@
     }
   }
   .active{
-    color: #8DC043;
+    color: $sub-mode !important;
   }
   .collapse{
-    background-color: #038896 !important;
+    background-color: $main-mode !important;
   }
 }
 
 .fa-check{
-  color: #8dc043;
+  color: $sub-mode;
   padding-inline: 10px;
 }
 .fa-font{
@@ -149,9 +152,9 @@
 @media (max-width: 990px) {
   .navbar-collapse
     {
-        background-color:#038896;
+        background-color: $main-mode;
         margin-left: 55%;
-        padding: 10px 10px;
+        padding: 15px ;
         text-align: center;
         ul li{
           margin: 3px 0;

@@ -22,7 +22,7 @@
           <img class="icon-size" src="../../../assets/search-1.png" alt="search">
         </li>
         <div  class="input-group expand-icon mx-1" (click)="handelSearchInput()" *ngIf="shearchIconIsClicked">
-          <input type="text" class="form-control" placeholder="Search this blog">
+          <input type="text" class="form-control" placeholder="Search">
           <div class="input-group-append">
             <img class="icon-size" src="../../../assets/search-1.png" alt="search">
           </div>
@@ -77,15 +77,15 @@
   <div class="side-links d-flex flex-column justify-content-between">
     <ul>
       <li class="main-link">
-        <a [routerLink]="['Home']" routerLinkActive="active"> Home</a>
+        <a [routerLink]="['/Home']" routerLinkActive="active"> Home</a>
       </li>
       <div class="links-group">
         <div class="main-link">About Us</div>
         <li class="sub-link">
-          <a [routerLink]="['/home']" routerLinkActive="active"> How Ara Us</a>
+          <a [routerLink]="['']" > How Ara Us</a>
         </li>
         <li class="sub-link">
-          <a [routerLink]="['/home']" routerLinkActive="active"> Why Us</a>
+          <a [routerLink]="['']" > Why Us</a>
         </li>
       </div>
       <div class="links-group">
