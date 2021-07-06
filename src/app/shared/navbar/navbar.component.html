@@ -18,7 +18,7 @@
     </button>
     <div class="collapse navbar-collapse" [class.show]="isOpen" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto d-flex align-items-center">
-        <li class="nav-item nav-icon mx-1" (click)="handelSearchInput()" *ngIf="!shearchIconIsClicked">
+        <li matTooltip="Search" class="nav-item nav-icon mx-1" (click)="handelSearchInput()" *ngIf="!shearchIconIsClicked">
           <img class="icon-size" src="../../../assets/search-1.png" alt="search">
         </li>
         <div  class="input-group expand-icon mx-1" (click)="handelSearchInput()" *ngIf="shearchIconIsClicked">
@@ -27,14 +27,14 @@
             <img class="icon-size" src="../../../assets/search-1.png" alt="search">
           </div>
         </div>
-        <li class="nav-item nav-icon mx-1">
+        <li matTooltip="Notification" class="nav-item nav-icon mx-1">
           <i class="far fa-bell"></i>
         </li>
-        <li class="d-flex profile-section mx-1">
+        <li  class="d-flex profile-section mx-1">
           <img class="profile-photo mx-1" src="../../../assets/img-1.png" alt="user image">
           <span class="user-name mx-1"> User Name </span>
         </li>
-          <i class="fas fa-cog mx-1" id="dropdownBasic1" [matMenuTriggerFor]="beforeMenu"></i>
+          <i matTooltip="Setting" class="fas fa-cog mx-1" id="dropdownBasic1" [matMenuTriggerFor]="beforeMenu"></i>
           <mat-menu #beforeMenu="matMenu" xPosition="before">
             <button mat-menu-item disabled>
               <small class="text-muted"> Language</small>

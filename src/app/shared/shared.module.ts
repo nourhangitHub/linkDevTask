@@ -11,6 +11,7 @@ import { DatePipe } from '../core/customPipe/date.pipe';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { NgxSpinnerModule } from "ngx-spinner";  
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ReactiveFormsModule,
     NgxPaginationModule,
     MatMenuModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatTooltipModule
   ],
   exports: [
     NavbarComponent,
@@ -41,7 +43,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ReactiveFormsModule,
     NgxPaginationModule,
     MatMenuModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatTooltipModule
   ],
   
 })
